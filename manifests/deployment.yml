@@ -1,0 +1,22 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mynodeapp 
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: mynodeapp
+  template:
+    metadata:
+      labels:
+        app: mynodeapp 
+    spec:
+      containers:
+        - name: mynodeapp 
+          image: ievap.azurecr.io/mynodeapp
+          ports:
+          - containerPort: 8888
+
+
+          
